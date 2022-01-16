@@ -70,7 +70,7 @@ public class TesteGm {
 		
 		//DADOS PREENCHIDOS COM A SENHA ERRADA
 		inputEmail.sendKeys("louis@email.com");
-		inputSenha.sendKeys("nba2022");
+		inputSenha.sendKeys("senhaerrada");
 		
 
 		try {
@@ -174,6 +174,13 @@ public class TesteGm {
 				}
 				
 				submit.click();
+				
+				try {
+					Thread.sleep(2000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				
 				WebElement msgSenhaCurta = driver.findElement(By.xpath("/html/body/app-root/app-log/div/div/p"));
 				System.out.println(msgSenhaCurta.getText());
